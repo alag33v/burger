@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+}
+
+/* --- Burger styles --- */
+
+.burger-wrapper {
+  width: 25px;
+  height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.burger-icon {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+}
+
+.burger-icon::before {
+  content: '';
+  width: 25px;
+  height: 2px;
+  top: -7px;
+  left: 0;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  transition: transform .2s linear, top .2s linear .2s;
+}
+
+.burger-icon::after {
+  content: '';
+  width: 25px;
+  height: 2px;
+  top: 7px;
+  left: 0;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  transition: transform .2s linear, top .2s linear .2s;
+}
+
+/* --- Burger turn to X --- */
+
+ .burger-icon.active {
+  background-color: transparent;
+}
+
+ .burger-icon.active::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top .2s linear, transform .2s linear .2s;
+}
+
+.burger-icon.active::after {
+  transform: rotate(135deg);
+  top: 0;
+  transition: top .2s linear, transform .2s linear .2s;
+}
